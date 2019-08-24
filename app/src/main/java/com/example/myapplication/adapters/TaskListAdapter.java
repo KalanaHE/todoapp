@@ -43,12 +43,16 @@ public class TaskListAdapter extends ArrayAdapter<Tasks> {
 
         String currentdate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
 
-        if (getItem(position).getDate().compareTo(currentdate)<0||getItem(position).getDate().equals(currentdate))
+        if (getItem(position).getDate().compareTo(currentdate)<0)
             view.setBackgroundColor(Color.RED);
+
+        else if (getItem(position).getDate().equals(currentdate))
+            view.setBackgroundColor(Color.YELLOW);
 
 
         return view;
     }
+
 
 
 }
