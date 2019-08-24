@@ -28,6 +28,7 @@ public class Tasks implements Serializable {
 
 
     public String getDate() {
+
         return date;
     }
 

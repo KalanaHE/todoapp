@@ -1,6 +1,7 @@
 package com.example.myapplication.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,10 @@ import com.example.myapplication.R;
 import com.example.myapplication.Tasks;
 
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class TaskListAdapter extends ArrayAdapter<Tasks> {
 
@@ -32,9 +36,16 @@ public class TaskListAdapter extends ArrayAdapter<Tasks> {
         LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view  = layoutInflater.inflate(R.layout.task_list, parent, false);
         TextView tv_name = (TextView)view.findViewById(R.id.tv_task);
-        TextView tv_address = (TextView)view.findViewById(R.id.tv_date);
+        TextView tv_date = (TextView)view.findViewById(R.id.tv_date);
         tv_name.setText("Task: " + tasks.get(position).getTaskName());
-        tv_address.setText("Date: " + tasks.get(position).getDate());
+        tv_date.setText("Date: " + tasks.get(position).getDate());
+
+
+        String currentdate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
+
+        if (getItem(position).getDate().compareTo(currentdate)<0||getItem(position).getDate().equals(currentdate))
+            view.setBackgroundColor(Color.RED);
+
 
         return view;
     }
