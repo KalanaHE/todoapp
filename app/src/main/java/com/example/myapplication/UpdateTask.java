@@ -46,13 +46,13 @@ public class UpdateTask extends AppCompatActivity {
        btn_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String firstname = et_utask.getText().toString();
+                String taskname = et_utask.getText().toString();
 
-                String address = et_udate.getText().toString();
+                String date = et_udate.getText().toString();
 
-                tasks.setTask(firstname);
+                tasks.setTask(taskname);
 
-                tasks.setDate(address);
+                tasks.setDate(date);
 
 
                 if(db.Update(tasks)){

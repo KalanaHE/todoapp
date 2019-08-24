@@ -11,7 +11,7 @@ import java.util.List;
 
 
 public class Database extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "taskapp.db";
+    public static final String DATABASE_NAME = "tasksapp.db";
     public static final String TABLE_NAME = "tbl_task";
 
     public Database(Context context) {

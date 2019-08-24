@@ -31,10 +31,10 @@ public class TaskListAdapter extends ArrayAdapter<Tasks> {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view  = layoutInflater.inflate(R.layout.task_list, parent, false);
-        TextView tv_name = (TextView)view.findViewById(R.id.tv_name);
-        TextView tv_address = (TextView)view.findViewById(R.id.tv_address);
-        tv_name.setText("Name: " + tasks.get(position).getTaskName());
-        tv_address.setText("Address: " + tasks.get(position).getDate());
+        TextView tv_name = (TextView)view.findViewById(R.id.tv_task);
+        TextView tv_address = (TextView)view.findViewById(R.id.tv_date);
+        tv_name.setText("Task: " + tasks.get(position).getTaskName());
+        tv_address.setText("Date: " + tasks.get(position).getDate());
 
         return view;
     }

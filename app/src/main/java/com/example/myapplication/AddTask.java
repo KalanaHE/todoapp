@@ -14,9 +14,7 @@ public class AddTask extends AppCompatActivity {
     EditText et_addtask, et_addate;
     Button btn_tsave, btn_tback;
 
-    //
 
-    //
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
